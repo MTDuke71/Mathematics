@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+      "name": "Mathematics (notes, exercises)",
+      "path": "."
+    },
+    {
+      "name": "Lean — math201",
+      "path": "lean/math201"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.lake": true
+    },
+    "search.exclude": {
+      "**/.lake": true
+    },
+    "markdown.preview.scrollPreviewWithEditor": true
+  }
+}
