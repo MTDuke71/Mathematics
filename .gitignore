@@ -1,0 +1,19 @@
+# Lake build artifacts and vendored dependencies.
+# lean/math201/.lake alone is ~7 GB / 120k files — Mathlib source plus
+# compiled .olean. All of it is reproducible with `lake exe cache get`,
+# so none of it belongs in the repo.
+.lake/
+build/
+*.olean
+*.ilean
+*.trace
+*.hash
+
+# Editor / OS noise
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+*.swp
