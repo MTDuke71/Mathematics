@@ -30,17 +30,19 @@ question with the name attached. That gap — right answer, no name, no transfer
 
 ---
 
-## Session 0 — install Lean 4 + Mathlib
+## Session 0 — install Lean 4 + Mathlib — **DONE 2026-07-27**
 
-Prerequisite for the Lean item in Session 4, and NNG doesn't cover it.
+elan 4.2.3, Lean v4.32.1, Mathlib pinned to v4.32.1. Project lives at
+[../lean/math201/](../lean/math201/).
 
-- Install `elan` (the toolchain manager — it is `rustup`, near enough).
-- `lake new math201 math` to make a Mathlib-backed project.
-- VS Code extension: **lean4**. Confirm the goal panel appears.
-- Sanity check: a file that says `import Mathlib` and compiles.
-
-First build of Mathlib takes a while and downloads a lot. Start it and go read
-1.1.
+- Write proofs in `lean/math201/Math201/`. Scratch file already there.
+- Build from inside `lean/math201`: `lake build`.
+- Type-check one file without a full build: `lake env lean Math201\Scratch.lean`.
+- `elan` is at `%USERPROFILE%\.elan\bin` — on PATH for new terminals.
+- **Import narrowly.** `import Mathlib.Tactic` + what you need. Bare
+  `import Mathlib` re-elaborates the world every time the file opens.
+- **`apply f at h` is Mathlib, not core Lean.** Fine inside this project;
+  fails in a bare `.lean` file. Same for `ring` and `norm_num`.
 
 ---
 

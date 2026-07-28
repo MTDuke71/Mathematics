@@ -5,7 +5,8 @@ Newest entries at the top. Status is one of: `reading`, `exercises`,
 
 | Date | Phase | Chapter / topic | Exercises | Lean | Status |
 |---|---|---|---|---|---|
-| 2026-07-27 | 0 | **Lean 4 + Mathlib installed** — elan 4.2.3, Lean v4.32.1, Mathlib pinned v4.32.1. Project at `~/math201` (should move under `lean/`). Smoke tests: [lean/hello.lean](lean/hello.lean), `math201/Math201/Scratch.lean` | — | `ring`, `norm_num`, `apply … at` verified | done |
+| 2026-07-27 | — | Repo under git (`main`); Lean project relocated to `lean/math201/`; `.lake` ignored | — | — | done |
+| 2026-07-27 | 0 | **Lean 4 + Mathlib installed** — elan 4.2.3, Lean v4.32.1, Mathlib pinned v4.32.1. Project at [lean/math201/](lean/math201/). Smoke tests: [lean/hello.lean](lean/hello.lean), `lean/math201/Math201/Scratch.lean` | — | `ring`, `norm_num`, `apply … at` verified | done |
 | 2026-07-27 | 1 | Hammack Ch. 1 (Sets) — [schedule issued](exercises/01-sets.md), 4 sessions + Lean install | assigned | subset transitivity (target) | reading |
 | 2026-07-27 | 0 | NNG: **Implication World complete** — `intro`, `exact`, `apply`, `apply … at`; `zero_ne_one`, `2 + 2 ≠ 5` | all levels | `succ_inj`, `zero_ne_succ` | done |
 | 2026-07-27 | — | Diagnostic Q4–Q12 graded; [assessment](exercises/00-diagnostic-assessment.md) rewritten for all 12 | 12 of 12 | — | done |
