@@ -13,7 +13,7 @@
 
 ## About Matt
 
-- **Matt LaDuke, 56. Twenty-plus-year engineer**, embedded / hardware roots
+- **Matt LaDuke, 54. Twenty-plus-year engineer**, embedded / hardware roots
   (early-career PCB layout work). Senior-level depth. Write at that level.
 - **He went through calculus in engineering school roughly 35 years ago,
   and it is gone.** Not rusty — gone. Do not assume he remembers what a
