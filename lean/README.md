@@ -1,6 +1,54 @@
 # lean/
 
-Lean 4 + Mathlib project. Not created yet — Phase 0 step 2.
+Lean 4 + Mathlib. Installed 2026-07-27: elan 4.2.3, Lean v4.32.1, Mathlib
+pinned to v4.32.1.
+
+## Two projects, two jobs
+
+| Dir | Toolchain | Tracked in git? | For |
+|---|---|---|---|
+| [math201/](math201/) | v4.32.1 | **yes** | the graded deliverables — one formalized theorem per Hammack chapter, current Mathlib, all tactics allowed |
+| `math2001/` | **v4.3.0** | no (gitignored) | drills from Macbeth's *The Mechanics of Proof*, in its own walled sandbox |
+
+`elan` reads `lean-toolchain` per directory, so the two coexist and neither
+disturbs the other. Verified: `lean --version` reports 4.32.1 inside
+`math201/` and 4.3.0 inside `math2001/`.
+
+### Why math2001 is quarantined
+
+Two reasons, both worth knowing before sitting down in it.
+
+**1. It is pinned to Lean v4.3.0** — twenty-nine minor versions behind, last
+upstream commit 2024-12-09. Not broken (the Mathlib cache for that revision
+is still hosted — 3969/3972 files pulled), but its Mathlib is from early 2024
+and lemma names have drifted since.
+
+**2. It deliberately disables the standard tactics.** From
+`Library/Basic.lean`: `simp`, `linarith`, `nlinarith`, `polyrith`, `decide`,
+`aesop`, and `tauto` are all macro'd to `fail`. Confirmed empirically —
+`by simp` errors with `simp tactic disabled`. In their place it supplies its
+own: `numbers`, `addarith`, `cancel`, `extra`, `obtain`, `exhaust`, and a
+custom `induction`.
+
+That is sound pedagogy — `simp` and `aesop` will close beginner goals
+*without* teaching why, which is the Lean-flavoured version of reading a
+proof and nodding. But it means part of the vocabulary is book-local and does
+not exist in real Lean.
+
+**So: drills there, deliverables in `math201/`.** What transfers is the hard
+part and it is version-independent — `calc` chains, `obtain`, case splitting,
+induction structure, ∃-witnesses. What doesn't transfer is tactic names.
+
+Reproduce the clone with:
+
+```bash
+cd lean && git clone --depth 1 https://github.com/hrmacbeth/math2001.git
+cd math2001 && lake exe cache get && lake build Library
+```
+
+`lake build Library` compiles Duper from source (~1000 targets) and is the
+slow step. Book text ships offline in `math2001/html/`; work it side by side
+with the exercise files, which are `sorry`-holes to fill.
 
 ## Setup, once `elan` exists
 

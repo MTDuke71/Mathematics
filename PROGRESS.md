@@ -5,6 +5,8 @@ Newest entries at the top. Status is one of: `reading`, `exercises`,
 
 | Date | Phase | Chapter / topic | Exercises | Lean | Status |
 |---|---|---|---|---|---|
+| 2026-07-29 | 0 | **Macbeth, *The Mechanics of Proof*** cloned to `lean/math2001/` (gitignored) and building — `Library` 1020 targets clean, sample exercise file type-checks. Pinned Lean **v4.3.0**, and it disables `simp`/`linarith`/`aesop`/`tauto` on purpose. Two-track split documented in [lean/README.md](lean/README.md): drills in math2001, deliverables in `math201/` | — | env verified | done |
+| 2026-07-29 | 1 | Hammack §1.1 — answers to #1–#5 graded, all conclusions correct; #6 recurrence found, closed form outstanding. Methods + diagnosis captured in [notes/Book of Proof/1_1-review.md](notes/Book%20of%20Proof/1_1-review.md). Named: Bézout, zero-product property / integral domain / zero divisors, extensionality, von Neumann ordinals, successive differences, telescoping | 5 of 6 | `∅ ≠ {∅}` (target) | exercises |
 | 2026-07-27 | — | Repo under git (`main`); Lean project relocated to `lean/math201/`; `.lake` ignored | — | — | done |
 | 2026-07-27 | 0 | **Lean 4 + Mathlib installed** — elan 4.2.3, Lean v4.32.1, Mathlib pinned v4.32.1. Project at [lean/math201/](lean/math201/). Smoke tests: [lean/hello.lean](lean/hello.lean), `lean/math201/Math201/Scratch.lean` | — | `ring`, `norm_num`, `apply … at` verified | done |
 | 2026-07-27 | 1 | Hammack Ch. 1 (Sets) — [schedule issued](exercises/01-sets.md), 4 sessions + Lean install | assigned | subset transitivity (target) | reading |

@@ -9,6 +9,18 @@ build/
 *.trace
 *.hash
 
+# Third-party Lean course repos, cloned not authored. Each carries its own
+# .git and its own lean-toolchain pin (math2001 is on Lean v4.3.0, not our
+# v4.32.1 — elan honours the per-directory pin, so they coexist). Reproduce
+# with:  git clone --depth 1 https://github.com/hrmacbeth/math2001.git
+# Anything worth keeping gets ported into lean/math201/ against current
+# Mathlib, which is where the graded Lean deliverables live.
+lean/math2001/
+
+# Office lock/owner files — created while a workbook is open, deleted on close.
+# `~$Problem1_2.xlsx` showed up mid-session; it is not work, it is a mutex.
+~$*
+
 # Editor / OS noise
 .vscode/
 .idea/
