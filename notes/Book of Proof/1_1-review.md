@@ -30,7 +30,7 @@ To prove `T ⊆ S`, do **not** describe a search:
 **Hand over the answer**, then discharge the debt that it's legal:
 
 > ✓ "let `n` be odd; then `n − 5` is even, so `n − 5 = 2k` for some `k ∈ ℤ`;
->    take `a = 1, b = k`"
+> take `a = 1, b = k`"
 
 The clause after "so" is where the real content hides. "Increase `b` until
 it works" quietly assumes you can land exactly on `n` — which is the thing
@@ -43,10 +43,10 @@ being proved.
 Write the chain with `⟺`, not `=` stacked down the page. Then both
 inclusions of M1 are discharged at once, for free.
 
-| Bad step | Direction that fails | Effect |
-|---|---|---|
-| divide both sides by `x` | `⟸` | **lose** solutions |
-| square both sides | `⟹` | **gain** solutions |
+| Bad step                  | Direction that fails | Effect                   |
+| ------------------------- | -------------------- | ------------------------ |
+| divide both sides by`x` | `⟸`               | **lose** solutions |
+| square both sides         | `⟹`               | **gain** solutions |
 
 `√x = −1 ⟹ x = 1` is the mirror image of losing `x = 0`. One step, one
 direction broken, one wrong answer.
@@ -66,13 +66,14 @@ The sin isn't the division, it's the undeclared branch.
 
 `{ expression : rule }` — expression **left**, rule **right**.
 
-| Part | Role | Legal form |
-|---|---|---|
-| binder | introduces the variable, says where it ranges | `n ∈ ℕ` — a **bare variable**, never `n+1 ∈ ℕ` |
-| condition | constrains an already-bound variable | `n > 3` |
-| expression | builds the output element | `n² + 2` |
+| Part       | Role                                          | Legal form                                                    |
+| ---------- | --------------------------------------------- | ------------------------------------------------------------- |
+| binder     | introduces the variable, says where it ranges | `n ∈ ℕ` — a **bare variable**, never `n+1 ∈ ℕ` |
+| condition  | constrains an already-bound variable          | `n > 3`                                                     |
+| expression | builds the output element                     | `n² + 2`                                                   |
 
 Consequences:
+
 - One index variable, used repeatedly — not two independently bound ones
   (two binders range over all *pairs*).
 - To shift an index, shift it in the **expression**, not the binder.
@@ -99,13 +100,14 @@ vec![vec![1], vec![2, 3]].len()   // 2, not 3
 
 For any "guess the pattern" sequence, difference it.
 
-| First differences | Closed form is |
-|---|---|
-| constant | linear |
-| constant *second* differences | quadratic |
-| constant *k*-th differences | degree `k` |
+| First differences              | Closed form is |
+| ------------------------------ | -------------- |
+| constant                       | linear         |
+| constant*second* differences | quadratic      |
+| constant*k*-th differences   | degree`k`    |
 
 Two routes from a recurrence to a closed form:
+
 - **Telescope** — unroll `f(n)` as `f(base)` plus the accumulated sum of all
   increments, then find a closed form for that sum.
 - **Fit** — if the closed form is a degree-`k` polynomial, fit
@@ -134,6 +136,7 @@ Clean version — let `S = {5a + 2b : a, b ∈ ℤ}`:
 > multiplication and addition.
 >
 > **`ℤ ⊆ S`:** let `n ∈ ℤ`.
+>
 > - `n` even: `n = 2k` for some `k ∈ ℤ`. Take `a = 0, b = k`; then
 >   `5a + 2b = 2k = n`.
 > - `n` odd: then `n − 5` is even, so `n − 5 = 2k` for some `k ∈ ℤ`. Take
@@ -205,14 +208,14 @@ and it is a *hypothesis*, not a law of arithmetic.
 
 Drop it and watch it break. In ℤ/6ℤ take `f(x) = x² − x = x(x−1)`:
 
-| `x` | `x² − x` | mod 6 |
-|---|---|---|
-| 0 | 0 | **0** ✓ |
-| 1 | 0 | **0** ✓ |
-| 2 | 2 | 2 |
-| 3 | 6 | **0** ✓ |
-| 4 | 12 | **0** ✓ |
-| 5 | 20 | 2 |
+| `x` | `x² − x` | mod 6          |
+| ----- | ------------ | -------------- |
+| 0     | 0            | **0** ✓ |
+| 1     | 0            | **0** ✓ |
+| 2     | 2            | 2              |
+| 3     | 6            | **0** ✓ |
+| 4     | 12           | **0** ✓ |
+| 5     | 20           | 2              |
 
 Four roots for a quadratic. Factoring said `x = 0` or `x = 1` and was
 **wrong**, because `2 · 3 ≡ 0 (mod 6)` with neither factor zero. `2` and `3`
@@ -236,6 +239,7 @@ number and the box containing it are different objects. Same distinction as
 `vec![0].len() == 1` and `is_empty() == false`; `Some(0)` is not `None`.
 
 **The `A` matters** (M5):
+
 - over `ℤ`: `{0}`, one element.
 - over `ℝ`: the open interval `(−5/6, 5/6)`, uncountably infinite.
 
@@ -320,33 +324,33 @@ wider one prepends an element silently.
 Canonical vocabulary is what makes a technique transferable. Each of these
 is the searchable name for something already used above.
 
-| Name | What it is | Where |
-|---|---|---|
-| Bézout's identity | `{ma+nb} = gcd(m,n)·ℤ` | #1, #2 |
-| subgroup of ℤ | closed under subtraction ⟹ equals `dℤ` | #2, why-level |
-| zero-product property | `ab = 0 ⟹ a = 0 or b = 0` | #3 |
-| integral domain | ring with no zero divisors | #3 |
-| zero divisor | nonzero `a` with `ab = 0` for some nonzero `b` | #3, ℤ/6ℤ |
-| extensionality | sets equal iff same elements | #5, Lean |
-| von Neumann ordinals | `0 := ∅`, `n+1 := n ∪ {n}` | #5 aside |
-| method of successive differences | difference the sequence to find degree | #6 |
-| telescoping | unroll a recurrence into a sum | #6 |
-| finite differences | fit a polynomial from `k+1` samples | #6 |
+| Name                             | What it is                                          | Where         |
+| -------------------------------- | --------------------------------------------------- | ------------- |
+| Bézout's identity               | `{ma+nb} = gcd(m,n)·ℤ`                          | #1, #2        |
+| subgroup of ℤ                   | closed under subtraction ⟹ equals`dℤ`           | #2, why-level |
+| zero-product property            | `ab = 0 ⟹ a = 0 or b = 0`                        | #3            |
+| integral domain                  | ring with no zero divisors                          | #3            |
+| zero divisor                     | nonzero`a` with `ab = 0` for some nonzero `b` | #3, ℤ/6ℤ    |
+| extensionality                   | sets equal iff same elements                        | #5, Lean      |
+| von Neumann ordinals             | `0 := ∅`, `n+1 := n ∪ {n}`                    | #5 aside      |
+| method of successive differences | difference the sequence to find degree              | #6            |
+| telescoping                      | unroll a recurrence into a sum                      | #6            |
+| finite differences               | fit a polynomial from`k+1` samples                | #6            |
 
 ## Still open
 
 - [ ] **#6** — closed form. Method in M7; answer not written down anywhere
-      in this repo on purpose.
+  in this repo on purpose.
 - [ ] **Written question** — `{1,1,2}` vs `{1,2}` are the same set. Name a
-      mathematical object for which they would *not* be, name the Rust type
-      corresponding to each, and give an operation that's cheap on one and
-      expensive on the other. One paragraph, no more.
+  mathematical object for which they would *not* be, name the Rust type
+  corresponding to each, and give an operation that's cheap on one and
+  expensive on the other. One paragraph, no more.
 - [ ] **Lean target** — prove `∅ ≠ {∅}`. Two or three tactics. Shape is in
-      #5: extensionality, then exhibit the distinguishing element. The point
-      isn't difficulty, it's that Lean won't accept the box picture.
+  #5: extensionality, then exhibit the distinguishing element. The point
+  isn't difficulty, it's that Lean won't accept the box picture.
 - [ ] **Rewrite #1–#3** with two inclusions (M1), explicit witnesses (M2),
-      and reversible chains (M3), then fold into
-      [1_1.md](1_1.md) §3.
+  and reversible chains (M3), then fold into
+  [1_1.md](1_1.md) §3.
 
 ## See also
 
