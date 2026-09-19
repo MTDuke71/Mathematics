@@ -15,6 +15,11 @@ Acquire only when the phase starts. One book at a time, finished.
 
 - **Hammack, _Book of Proof_** — free PDF: <https://www.people.vcu.edu/~rhammack/BookOfProof/>
 - Velleman, *How to Prove It* — fallback only if Hammack doesn't land.
+- Richmond & Richmond, *A Discrete Transition to Advanced Mathematics*, 2nd ed.
+  (AMS, 2023) — **problem bank, not a second textbook.** AMS member free eBook,
+  2026. Local only: `reading/AMSTEXT_63.E.pdf`, gitignored (copyrighted). Use:
+  extra problems when a Hammack chapter runs thin (Ch. 1–2, 5–6 overlap
+  Hammack); Ch. 11 continued fractions pairs with Silverman in Phase 2.
 
 ## Phase 2 — number theory
 

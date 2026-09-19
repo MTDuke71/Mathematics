@@ -17,6 +17,11 @@ build/
 # Mathlib, which is where the graded Lean deliverables live.
 lean/math2001/
 
+# Copyrighted book PDFs. Richmond & Richmond (AMS member free eBook, 36 MB) is
+# licensed to one person — it must not reach a remote. Hammack's Book Of Proof.pdf
+# stays tracked: it is freely distributable and already in history.
+reading/AMSTEXT_63.E.pdf
+
 # Office lock/owner files — created while a workbook is open, deleted on close.
 # `~$Problem1_2.xlsx` showed up mid-session; it is not work, it is a mutex.
 ~$*
